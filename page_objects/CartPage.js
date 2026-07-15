@@ -2,15 +2,8 @@ export class CartPage{
 
 constructor(page){
     this.page = page;
-    this.addToCartButton = page.locator('#add-to-cart-sauce-labs-bolt-t-shirt');
+    this.addToCartButton = page.locator('.btn.btn_primary.btn_small.btn_inventory').first();
     this.openCart = page.locator('#shopping_cart_container');
-
-    this.checkoutButton = page.locator('#checkout');
-    this.firstName = page.locator('#first-name');
-    this.lastName = page.locator('#last-name');
-    this.postalCode = page.locator('#postal-code');
-    this.continueButton = page.locator('#continue');
-
 }
 
 addItemToCart = async () => {
@@ -19,5 +12,12 @@ addItemToCart = async () => {
     await this.page.waitForURL('https://www.saucedemo.com/cart.html');
 }
 
+addAllItemsToCart = async () => {
+    for(let i=1; i<=6; i++){
+       await this.addToCartButton.click(); 
+    }
+    await this.openCart.click();
+    await this.page.waitForURL('https://www.saucedemo.com/cart.html');
+}
 
 }
