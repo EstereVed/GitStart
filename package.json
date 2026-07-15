@@ -1,14 +1,17 @@
 {
-  "name": "gitstart",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@playwright/test": "^1.61.1",
-    "@types/node": "^26.1.1"
+"name": "qamokymai",
+"version": "1.0.0",
+"description": "",
+"main": "index.js",
+"scripts": {
+  "test": "npx playwright test",
+  "test:headed": "npx playwright test --headed"
+  },
+"keywords": [],
+"author": "",
+"license": "ISC",
+"devDependencies": {
+  "@playwright/test": "^1.60.0",
+  "@types/node": "^25.9.2"
   }
 }
