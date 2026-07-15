@@ -3,7 +3,7 @@ import { LoginPage } from '../page_objects/LoginPage';
 import { CartPage } from '../page_objects/CartPage';
 import { CheckoutPage } from '../page_objects/CheckoutPage';
 
-test.only('pirmas testas', async ({ page }) => {
+test('pirmas testas', async ({ page }) => {
     
 
     //2026-06-30:
