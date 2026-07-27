@@ -12,12 +12,24 @@ addItemToCart = async () => {
     await this.page.waitForURL('https://www.saucedemo.com/cart.html');
 }
 
-addAllItemsToCart = async () => {
+addSixItemsToCart = async () => {
     for(let i=1; i<=6; i++){
        await this.addToCartButton.click(); 
     }
     await this.openCart.click();
     await this.page.waitForURL('https://www.saucedemo.com/cart.html');
+}
+
+addAllItemsToCart = async (selector) => {
+    const itemCount = await this.page.locator(selector).count();
+    const firstItem = await this.page.locator(selector).first();
+           
+    for(let i=1; i<=itemCount; i++){
+       await firstItem.click(); 
+    }
+    await this.openCart.click();
+    await this.page.waitForURL('https://www.saucedemo.com/cart.html');
+    
 }
 
 }
