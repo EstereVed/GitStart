@@ -27,4 +27,39 @@ console.log("Man yra " + metai +" metai");*/
 
 console.log(daugyba())*/
 
-//2026-07-14 for ciklas
+//2026-07-28 array pvz.:
+let fruits = ["coconut", "apple","pear"];
+console.log(fruits);
+console.log(fruits[1])
+
+// ismesti
+// fruits.pop();
+// ideti pabaigoj
+// fruits.push("banana");
+// ideti pradziok
+// fruits.unshift("strawberry");
+
+// skaicius array element
+console.log(fruits.length)
+// indeksas elemento
+console.log(fruits.indexOf("apple"))
+
+// iprastas loop array
+for(let i = 0; i < fruits.length; i++){
+    console.log(fruits[i]);
+}
+// paprastas loop array
+for (fruit of fruits){
+    console.log(fruit);
+}
+
+
+
+// sort pagal abc ir atv
+fruits.sort();
+fruits.sort().reverse();
+
+
+
+
+
