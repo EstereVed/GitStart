@@ -14,13 +14,13 @@ constructor(page){
     this.loginButton = page.locator('xpath = //*[@name ="login-button"]');
 }
 
-userLoginWithPassword = async (username,password) => {
-    await this.page.goto('https://www.saucedemo.com/');
-    await this.username.fill (username);
-    await this.password.fill (password);
-    await this.loginButton.click();
+//bdd šitos dalies nereikia:
 
-    //await this.page.waitForURL('https://www.saucedemo.com/inventory.html');
-}
+// userLoginWithPassword = async (username,password) => {
+//     await this.page.goto('https://www.saucedemo.com/');
+//     await this.username.fill (username);
+//     await this.password.fill (password);
+//     await this.loginButton.click();
+// }
 
 }
