@@ -17,4 +17,5 @@ When('I enter username {string} and password {string}', async ({ page }, usernam
 Then('I click the submit button', async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.loginButton.click();
+    await page.waitForURL('https://www.saucedemo.com/inventory.html')
 });

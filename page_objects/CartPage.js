@@ -2,34 +2,35 @@ export class CartPage{
 
 constructor(page){
     this.page = page;
-    this.addToCartButton = page.locator('.btn.btn_primary.btn_small.btn_inventory').first();
+    this.addToCartButton = page.locator('.btn.btn_primary.btn_small.btn_inventory')/*.first()*/;
     this.openCart = page.locator('#shopping_cart_container');
+    this.cartBadge = page.locator ('.shopping_cart_badge');
 }
 
-addItemToCart = async () => {
-    await this.addToCartButton.click();
-    await this.openCart.click();
-    await this.page.waitForURL('https://www.saucedemo.com/cart.html');
-}
+// addItemToCart = async () => {
+//     await this.addToCartButton.click();
+//     await this.openCart.click();
+//     await this.page.waitForURL('https://www.saucedemo.com/cart.html');
+// }
 
-addSixItemsToCart = async () => {
-    for(let i=1; i<=6; i++){
-       await this.addToCartButton.click(); 
-    }
-    await this.openCart.click();
-    await this.page.waitForURL('https://www.saucedemo.com/cart.html');
-}
+// addSixItemsToCart = async () => {
+//     for(let i=1; i<=6; i++){
+//        await this.addToCartButton.click(); 
+//     }
+//     await this.openCart.click();
+//     await this.page.waitForURL('https://www.saucedemo.com/cart.html');
+// }
 
-addAllItemsToCart = async (selector) => {
-    const itemCount = await this.page.locator(selector).count();
-    const firstItem = await this.page.locator(selector).first();
+// addAllItemsToCart = async (selector) => {
+//     const itemCount = await this.page.locator(selector).count();
+//     const firstItem = await this.page.locator(selector).first();
            
-    for(let i=1; i<=itemCount; i++){
-       await firstItem.click(); 
-    }
-    await this.openCart.click();
-    await this.page.waitForURL('https://www.saucedemo.com/cart.html');
+//     for(let i=1; i<=itemCount; i++){
+//        await firstItem.click(); 
+//     }
+//     await this.openCart.click();
+//     await this.page.waitForURL('https://www.saucedemo.com/cart.html');
     
-}
+// }
 
 }
