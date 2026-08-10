@@ -3,10 +3,12 @@ import { test } from "playwright-bdd";
 
 test.describe('User Login', () => {
 
-  test('Successful login with valid credentials', async ({ Given, When, Then, page }) => { 
-    await Given('I am on the login page', null, { page }); 
-    await When('I enter username "standard_user" and password "secret_sauce"', null, { page }); 
-    await Then('I click the submit button', null, { page }); 
+  test('Login with invalid credentials AE', async ({ Given, When, Then, And, page }) => { 
+    await Given('I am on Automation Exercise page', null, { page }); 
+    await And('I opened login page', null, { page }); 
+    await When('I enter username "test@email.com" and password "testPass"', null, { page }); 
+    await And('I click the login button', null, { page }); 
+    await Then('login error is displayed', null, { page }); 
   });
 
 });
@@ -20,5 +22,5 @@ test.use({
 });
 
 const bddFileData = [ // bdd-data-start
-  {"pwTestLine":6,"pickleLine":3,"tags":[],"steps":[{"pwStepLine":7,"gherkinStepLine":4,"keywordType":"Context","textWithKeyword":"Given I am on the login page","stepMatchArguments":[]},{"pwStepLine":8,"gherkinStepLine":5,"keywordType":"Action","textWithKeyword":"When I enter username \"standard_user\" and password \"secret_sauce\"","stepMatchArguments":[{"group":{"start":17,"value":"\"standard_user\"","children":[{"start":18,"value":"standard_user","children":[{}]},{"children":[{}]}]},"parameterTypeName":"string"},{"group":{"start":46,"value":"\"secret_sauce\"","children":[{"start":47,"value":"secret_sauce","children":[{}]},{"children":[{}]}]},"parameterTypeName":"string"}]},{"pwStepLine":9,"gherkinStepLine":6,"keywordType":"Outcome","textWithKeyword":"Then I click the submit button","stepMatchArguments":[]}]},
+  {"pwTestLine":6,"pickleLine":8,"tags":[],"steps":[{"pwStepLine":7,"gherkinStepLine":9,"keywordType":"Context","textWithKeyword":"Given I am on Automation Exercise page","stepMatchArguments":[]},{"pwStepLine":8,"gherkinStepLine":10,"keywordType":"Context","textWithKeyword":"And I opened login page","stepMatchArguments":[]},{"pwStepLine":9,"gherkinStepLine":11,"keywordType":"Action","textWithKeyword":"When I enter username \"test@email.com\" and password \"testPass\"","stepMatchArguments":[{"group":{"start":17,"value":"\"test@email.com\"","children":[{"start":18,"value":"test@email.com","children":[{}]},{"children":[{}]}]},"parameterTypeName":"string"},{"group":{"start":47,"value":"\"testPass\"","children":[{"start":48,"value":"testPass","children":[{}]},{"children":[{}]}]},"parameterTypeName":"string"}]},{"pwStepLine":10,"gherkinStepLine":12,"keywordType":"Action","textWithKeyword":"And I click the login button","stepMatchArguments":[]},{"pwStepLine":11,"gherkinStepLine":13,"keywordType":"Outcome","textWithKeyword":"Then login error is displayed","stepMatchArguments":[]}]},
 ]; // bdd-data-end
