@@ -6,14 +6,21 @@ const { Given, When, Then } = createBdd();
 
 
 Given('I am on Automation Exercise page', async ({ page }) => {
+    const loginPage = new LoginPage(page)
     await page.goto('https://automationexercise.com/');
-    await page.locator('button.fc-cta-consent').waitFor({ state: 'visible' });
-    await page.locator('button.fc-cta-consent').click();
-    
+    await loginPage.tryClickConsent();
+    // try{
+    //     await page.locator('button.fc-cta-consent').waitFor({ state: 'visible', timeout:5000 });
+    //     await page.locator('button.fc-cta-consent').click();
+    // } catch (error){
+    //     console.log ('Consent button not found',error);
+    // }
+        
 });
 
 Given('I opened login page', async ({ page }) => {
     const loginPage = new LoginPage(page);
+    await loginPage.tryClickConsent();
     await loginPage.signupLoginButton.click();
     await page.waitForURL('https://automationexercise.com/login');
 });
@@ -26,6 +33,7 @@ When('I enter username {string} and password {string}', async ({ page }, usernam
 
 When('I click the login button', async ({ page }) => {
     const loginPage = new LoginPage(page);
+    await loginPage.tryClickConsent();
     await loginPage.loginButton.click();
 });
 

@@ -8,6 +8,16 @@ export class LoginPage{
     this.loginButton = page.locator('[data-qa="login-button"]');
 }
 
+tryClickConsent = async () => {
+    const consentBtn = this.page.locator('button.fc-cta-consent')
+     try{
+        await consentBtn.waitFor({ state: 'visible', timeout:5000 });
+        await consentBtn.click();
+    } catch (error){
+        console.log ('Consent button not found',error);
+    }
+}
+
 // constructor(page){
 //     this.page = page;
 //     //this.username = page.locator('#user-name');
