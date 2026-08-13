@@ -17,8 +17,8 @@ export class FormPage{
     this.endDate = page.locator('#end-date');
     this.submitButton = page.locator('.submit-btn');
     this.calculatedRange = page.locator('#result');
-    this.chooseFileButton = page.locator('#singleFileInput');
-    this.uploadSingleFileButton = page.locator('xpath=//*[@id="singleFileForm"]/button');
-    
+    this.firstHandle = page.locator('[class*="ui-slider-handle ui-corner-all"]').first();
+    this.secondHandle = page.locator('[class*="ui-slider-handle ui-corner-all"]').nth(1);
+    this.slideBar = page.locator('#slider-range');
 }
 }

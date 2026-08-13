@@ -2,18 +2,14 @@ Feature: fill form
 
 Scenario: fill all fields in the form
 Given user opened Data Entry Form page
-When user enters name "Test Name"
-And user enters email "test@test.lt"
-And user enters phone number "1234567890"
-And user enters address "Testing street 15-6, Test"
-And user selects gender
-And user selects days
-And user selects country
-And user selects color
-And user selects animal
-And user selects first date
-And user selects second date
-And user selects date range
-# And user uploads one file
-# Then fields are filled
+When user enters name "Test Name", email "test@test.lt", phone number "1234567890" and address "Testing street 15-6, Test"
+And user selects gender and days
+And user selects country, color and animal
+And user selects dates
+Then correct date range is displayed
 
+Scenario: select range from 100 to 300
+Given user opened Data Entry Form page
+When user selects first value
+And user selects second value
+Then correct price range displayed
